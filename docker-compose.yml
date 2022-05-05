@@ -1,4 +1,4 @@
-version: '2'
+version: "3.8"
 services:
   suitecrm:
     build: src
@@ -19,12 +19,13 @@ services:
     volumes:
       - mysqldata:/var/lib/mysql
     ports:
-      - 3306:3306
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: qnPBgFbTh63NJcPT9xofax6hjBD9JG
       MYSQL_DATABASE: suitecrm
       MYSQL_USER: suitecrm
       MYSQL_PASSWORD: 9rt3tCxHH9WvuN8FXyiPxcmbnN7iTC
+    command: ["mysqld", "--default_authentication_plugin=mysql_native_password"]
 
 volumes:
   mysqldata:
